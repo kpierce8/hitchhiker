@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		BAB7D66102C09BEC7C7FF6AD /* Pods_hitchhiker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EE3B1E53AB6477343C2B07E /* Pods_hitchhiker.framework */; };
+		E1222F821F928ECE008A8FA8 /* LeftSidePanelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1222F811F928ECE008A8FA8 /* LeftSidePanelVC.swift */; };
+		E1222F841F928F6A008A8FA8 /* ContainerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1222F831F928F6A008A8FA8 /* ContainerVC.swift */; };
+		E1222F871F929936008A8FA8 /* CenterVCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1222F861F929936008A8FA8 /* CenterVCDelegate.swift */; };
 		E1ACE7871F85D2D20053A1FC /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ACE7861F85D2D20053A1FC /* GradientView.swift */; };
 		E1ACE7891F85D8A00053A1FC /* RoundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ACE7881F85D8A00053A1FC /* RoundImageView.swift */; };
 		E1ACE78B1F85DA980053A1FC /* RoundedShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ACE78A1F85DA980053A1FC /* RoundedShadowView.swift */; };
@@ -24,6 +27,9 @@
 		0EE3B1E53AB6477343C2B07E /* Pods_hitchhiker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hitchhiker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		55A678BF1603B7EF19E7E9A0 /* Pods-hitchhiker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hitchhiker.release.xcconfig"; path = "Pods/Target Support Files/Pods-hitchhiker/Pods-hitchhiker.release.xcconfig"; sourceTree = "<group>"; };
 		99AB09F2F695DE4305FB538B /* Pods-hitchhiker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hitchhiker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-hitchhiker/Pods-hitchhiker.debug.xcconfig"; sourceTree = "<group>"; };
+		E1222F811F928ECE008A8FA8 /* LeftSidePanelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftSidePanelVC.swift; sourceTree = "<group>"; };
+		E1222F831F928F6A008A8FA8 /* ContainerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerVC.swift; sourceTree = "<group>"; };
+		E1222F861F929936008A8FA8 /* CenterVCDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterVCDelegate.swift; sourceTree = "<group>"; };
 		E1ACE7861F85D2D20053A1FC /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		E1ACE7881F85D8A00053A1FC /* RoundImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundImageView.swift; sourceTree = "<group>"; };
 		E1ACE78A1F85DA980053A1FC /* RoundedShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedShadowView.swift; sourceTree = "<group>"; };
@@ -67,6 +73,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E1222F851F929914008A8FA8 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				E1222F861F929936008A8FA8 /* CenterVCDelegate.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		E1ACE7831F85D2940053A1FC /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +103,9 @@
 		E1ACE7851F85D2A70053A1FC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E1EE76FB1F831C46002BB811 /* HomeVC.swift */,
+				E1222F811F928ECE008A8FA8 /* LeftSidePanelVC.swift */,
+				E1222F831F928F6A008A8FA8 /* ContainerVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -114,11 +131,11 @@
 		E1EE76F81F831C46002BB811 /* hitchhiker */ = {
 			isa = PBXGroup;
 			children = (
+				E1222F851F929914008A8FA8 /* Protocols */,
 				E1ACE7851F85D2A70053A1FC /* Controller */,
 				E1ACE7841F85D29D0053A1FC /* View */,
 				E1ACE7831F85D2940053A1FC /* Model */,
 				E1EE76F91F831C46002BB811 /* AppDelegate.swift */,
-				E1EE76FB1F831C46002BB811 /* HomeVC.swift */,
 				E1EE76FD1F831C46002BB811 /* Main.storyboard */,
 				E1EE77001F831C46002BB811 /* Assets.xcassets */,
 				E1EE77021F831C46002BB811 /* LaunchScreen.storyboard */,
@@ -264,10 +281,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1222F871F929936008A8FA8 /* CenterVCDelegate.swift in Sources */,
 				E1ACE78F1F85E1D50053A1FC /* RoundedShadowButton.swift in Sources */,
 				E1ACE78D1F85E0350053A1FC /* CircleView.swift in Sources */,
 				E1EE76FC1F831C46002BB811 /* HomeVC.swift in Sources */,
+				E1222F841F928F6A008A8FA8 /* ContainerVC.swift in Sources */,
 				E1ACE7891F85D8A00053A1FC /* RoundImageView.swift in Sources */,
+				E1222F821F928ECE008A8FA8 /* LeftSidePanelVC.swift in Sources */,
 				E1ACE78B1F85DA980053A1FC /* RoundedShadowView.swift in Sources */,
 				E1EE76FA1F831C46002BB811 /* AppDelegate.swift in Sources */,
 				E1ACE7871F85D2D20053A1FC /* GradientView.swift in Sources */,

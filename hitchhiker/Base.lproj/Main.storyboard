@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,10 +16,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--HomeVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="hitchhiker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeVC" id="BYZ-38-t0r" customClass="HomeVC" customModule="hitchhiker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -39,6 +40,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KhO-X4-nZv">
                                         <rect key="frame" x="0.0" y="3" width="30" height="24"/>
                                         <state key="normal" image="menuSliderBtn"/>
+                                        <connections>
+                                            <action selector="menuButtonWasPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="D1l-Kr-xOC"/>
+                                        </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pwe-RI-TQ2">
                                         <rect key="frame" x="103.5" y="0.0" width="128.5" height="30"/>
@@ -212,10 +216,10 @@
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="132.68365817091455"/>
         </scene>
-        <!--View Controller-->
+        <!--Left Side PanelVC-->
         <scene sceneID="mRk-xg-IzE">
             <objects>
-                <viewController id="fOK-c9-GcP" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LeftSidePanelVC" id="fOK-c9-GcP" customClass="LeftSidePanelVC" customModule="hitchhiker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tYd-dn-DcO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -232,37 +236,36 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="f64-7A-R5o" firstAttribute="centerY" secondItem="0vH-va-vB8" secondAttribute="centerY" id="E7o-Nu-jad"/>
-                                    <constraint firstItem="f64-7A-R5o" firstAttribute="leading" secondItem="0vH-va-vB8" secondAttribute="leading" constant="20" id="ZNq-9f-aS9"/>
-                                    <constraint firstAttribute="height" constant="90" id="xhq-D9-HBe"/>
+                                    <constraint firstItem="f64-7A-R5o" firstAttribute="top" secondItem="0vH-va-vB8" secondAttribute="top" constant="29" id="XJo-E5-q4l"/>
+                                    <constraint firstItem="f64-7A-R5o" firstAttribute="leading" secondItem="0vH-va-vB8" secondAttribute="leading" constant="20" id="ddh-GU-Gsr"/>
+                                    <constraint firstItem="f64-7A-R5o" firstAttribute="centerY" secondItem="0vH-va-vB8" secondAttribute="centerY" id="sRC-vP-FJa"/>
                                 </constraints>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="TUv-Xb-nfX">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="TUv-Xb-nfX">
                                 <rect key="frame" x="16" y="110" width="114" height="180"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A3p-hI-irO">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A3p-hI-irO">
                                         <rect key="frame" x="0.0" y="0.0" width="114" height="45"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="24"/>
                                         <state key="normal" title="Payment">
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="24q-0S-nOA">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="24q-0S-nOA">
                                         <rect key="frame" x="0.0" y="45" width="114" height="45"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="24"/>
                                         <state key="normal" title="Your Trips">
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xBg-2l-0T3">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xBg-2l-0T3">
                                         <rect key="frame" x="0.0" y="90" width="114" height="45"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="24"/>
                                         <state key="normal" title="Help">
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="psJ-f4-SBc">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="psJ-f4-SBc">
                                         <rect key="frame" x="0.0" y="135" width="114" height="45"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="24"/>
                                         <state key="normal" title="Settings">
@@ -271,21 +274,23 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8iN-C2-Wub">
-                                <rect key="frame" x="16" y="602" width="114" height="45"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8iN-C2-Wub">
+                                <rect key="frame" x="16" y="602" width="167" height="45"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="24"/>
-                                <state key="normal" title="Settings">
+                                <state key="normal" title="Sign Up/Login">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="0vH-va-vB8" firstAttribute="trailing" secondItem="2Zf-UD-dWY" secondAttribute="trailing" id="Iyx-1j-s2a"/>
-                            <constraint firstItem="8iN-C2-Wub" firstAttribute="leading" secondItem="2Zf-UD-dWY" secondAttribute="leading" id="V3R-Fc-pso"/>
-                            <constraint firstItem="2Zf-UD-dWY" firstAttribute="bottom" secondItem="8iN-C2-Wub" secondAttribute="bottom" constant="20" id="kJf-a2-xMR"/>
-                            <constraint firstItem="0vH-va-vB8" firstAttribute="leading" secondItem="2Zf-UD-dWY" secondAttribute="leading" id="mgq-mi-Z8T"/>
-                            <constraint firstItem="0vH-va-vB8" firstAttribute="top" secondItem="tYd-dn-DcO" secondAttribute="top" id="uVP-LK-1Fo"/>
+                            <constraint firstAttribute="bottom" secondItem="8iN-C2-Wub" secondAttribute="bottom" constant="20" symbolic="YES" id="Bwx-Tq-jbm"/>
+                            <constraint firstItem="0vH-va-vB8" firstAttribute="top" secondItem="tYd-dn-DcO" secondAttribute="top" id="GTQ-2T-qud"/>
+                            <constraint firstAttribute="trailing" secondItem="0vH-va-vB8" secondAttribute="trailing" id="Mjb-5s-oFo"/>
+                            <constraint firstItem="TUv-Xb-nfX" firstAttribute="top" secondItem="0vH-va-vB8" secondAttribute="bottom" constant="20" id="XtH-ZK-AO6"/>
+                            <constraint firstItem="TUv-Xb-nfX" firstAttribute="leading" secondItem="tYd-dn-DcO" secondAttribute="leadingMargin" id="YqK-nV-oA8"/>
+                            <constraint firstItem="TUv-Xb-nfX" firstAttribute="leading" secondItem="8iN-C2-Wub" secondAttribute="leading" id="adT-xF-g1x"/>
+                            <constraint firstItem="0vH-va-vB8" firstAttribute="leading" secondItem="tYd-dn-DcO" secondAttribute="leading" id="bUc-H6-f9o"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="2Zf-UD-dWY"/>
                     </view>

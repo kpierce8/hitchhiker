@@ -9,8 +9,11 @@
 import UIKit
 import MapKit
 
-class ViewController: UIViewController, MKMapViewDelegate {
+class HomeVC: UIViewController, MKMapViewDelegate {
 
+    @IBAction func menuButtonWasPressed(_ sender: Any) {
+        delegate?.toggelLeftPanel()
+    }
     @IBOutlet weak var actionButton: RoundedShadowButton!
     
     @IBAction func actionButtonWasPressed(_ sender: Any) {
@@ -18,10 +21,13 @@ class ViewController: UIViewController, MKMapViewDelegate {
     }
     @IBOutlet weak var mapview: MKMapView!
     
+    var delegate: CenterVCDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         mapview.delegate = self
+        
+        // Stuff I added to change starting position
         let noLocation: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 50, longitude: -122)
         let viewRegion : MKCoordinateRegion  = MKCoordinateRegionMakeWithDistance(noLocation, 500, 500)
         let adjustedRegion: MKCoordinateRegion  = self.mapview.regionThatFits(viewRegion)
