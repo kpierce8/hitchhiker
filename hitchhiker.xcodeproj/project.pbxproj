@@ -11,6 +11,8 @@
 		E1222F821F928ECE008A8FA8 /* LeftSidePanelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1222F811F928ECE008A8FA8 /* LeftSidePanelVC.swift */; };
 		E1222F841F928F6A008A8FA8 /* ContainerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1222F831F928F6A008A8FA8 /* ContainerVC.swift */; };
 		E1222F871F929936008A8FA8 /* CenterVCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1222F861F929936008A8FA8 /* CenterVCDelegate.swift */; };
+		E1222F8A1F93EBE6008A8FA8 /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1222F891F93EBE6008A8FA8 /* UIViewExt.swift */; };
+		E1222F8C1F93F834008A8FA8 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1222F8B1F93F834008A8FA8 /* LoginVC.swift */; };
 		E1ACE7871F85D2D20053A1FC /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ACE7861F85D2D20053A1FC /* GradientView.swift */; };
 		E1ACE7891F85D8A00053A1FC /* RoundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ACE7881F85D8A00053A1FC /* RoundImageView.swift */; };
 		E1ACE78B1F85DA980053A1FC /* RoundedShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ACE78A1F85DA980053A1FC /* RoundedShadowView.swift */; };
@@ -30,6 +32,8 @@
 		E1222F811F928ECE008A8FA8 /* LeftSidePanelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftSidePanelVC.swift; sourceTree = "<group>"; };
 		E1222F831F928F6A008A8FA8 /* ContainerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerVC.swift; sourceTree = "<group>"; };
 		E1222F861F929936008A8FA8 /* CenterVCDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterVCDelegate.swift; sourceTree = "<group>"; };
+		E1222F891F93EBE6008A8FA8 /* UIViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
+		E1222F8B1F93F834008A8FA8 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		E1ACE7861F85D2D20053A1FC /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		E1ACE7881F85D8A00053A1FC /* RoundImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundImageView.swift; sourceTree = "<group>"; };
 		E1ACE78A1F85DA980053A1FC /* RoundedShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedShadowView.swift; sourceTree = "<group>"; };
@@ -81,6 +85,14 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		E1222F881F93EBB0008A8FA8 /*  Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E1222F891F93EBE6008A8FA8 /* UIViewExt.swift */,
+			);
+			path = " Extensions";
+			sourceTree = "<group>";
+		};
 		E1ACE7831F85D2940053A1FC /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +118,7 @@
 				E1EE76FB1F831C46002BB811 /* HomeVC.swift */,
 				E1222F811F928ECE008A8FA8 /* LeftSidePanelVC.swift */,
 				E1222F831F928F6A008A8FA8 /* ContainerVC.swift */,
+				E1222F8B1F93F834008A8FA8 /* LoginVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -131,6 +144,7 @@
 		E1EE76F81F831C46002BB811 /* hitchhiker */ = {
 			isa = PBXGroup;
 			children = (
+				E1222F881F93EBB0008A8FA8 /*  Extensions */,
 				E1222F851F929914008A8FA8 /* Protocols */,
 				E1ACE7851F85D2A70053A1FC /* Controller */,
 				E1ACE7841F85D29D0053A1FC /* View */,
@@ -283,9 +297,11 @@
 			files = (
 				E1222F871F929936008A8FA8 /* CenterVCDelegate.swift in Sources */,
 				E1ACE78F1F85E1D50053A1FC /* RoundedShadowButton.swift in Sources */,
+				E1222F8C1F93F834008A8FA8 /* LoginVC.swift in Sources */,
 				E1ACE78D1F85E0350053A1FC /* CircleView.swift in Sources */,
 				E1EE76FC1F831C46002BB811 /* HomeVC.swift in Sources */,
 				E1222F841F928F6A008A8FA8 /* ContainerVC.swift in Sources */,
+				E1222F8A1F93EBE6008A8FA8 /* UIViewExt.swift in Sources */,
 				E1ACE7891F85D8A00053A1FC /* RoundImageView.swift in Sources */,
 				E1222F821F928ECE008A8FA8 /* LeftSidePanelVC.swift in Sources */,
 				E1ACE78B1F85DA980053A1FC /* RoundedShadowView.swift in Sources */,

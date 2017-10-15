@@ -12,6 +12,7 @@
     <customFonts key="customFonts">
         <array key="AvenirNext.ttc">
             <string>AvenirNext-Bold</string>
+            <string>AvenirNext-Heavy</string>
             <string>AvenirNext-Regular</string>
         </array>
     </customFonts>
@@ -280,6 +281,9 @@
                                 <state key="normal" title="Sign Up/Login">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="signUpLoginButtonWasPressed:" destination="fOK-c9-GcP" eventType="touchUpInside" id="L4I-8a-TOk"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -299,10 +303,142 @@
             </objects>
             <point key="canvasLocation" x="852" y="134.48275862068968"/>
         </scene>
+        <!--LoginVC-->
+        <scene sceneID="V7H-kS-Mmr">
+            <objects>
+                <viewController storyboardIdentifier="LoginVC" id="oyf-xL-9cv" customClass="LoginVC" customModule="hitchhiker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9iO-Im-biI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pexels-photo-24821" translatesAutoresizingMaskIntoConstraints="NO" id="xKq-sz-zK0">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q8T-Vl-Tqm">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="hQE-oK-6Dh">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LzZ-gc-gni">
+                                            <rect key="frame" x="20" y="30" width="30" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="30" id="q74-XY-06R"/>
+                                                <constraint firstAttribute="height" constant="30" id="tES-Kq-7IA"/>
+                                            </constraints>
+                                            <state key="normal" image="cancelBtn"/>
+                                        </button>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="BAn-Gw-0EC">
+                                            <rect key="frame" x="24" y="167.5" width="326" height="332.5"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="1Sd-hy-vko">
+                                                    <rect key="frame" x="0.0" y="0.0" width="326" height="112.5"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ngw-ff-H6q">
+                                                            <rect key="frame" x="45" y="0.0" width="236.5" height="66"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HTCH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1c6-oB-f49">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="133.5" height="66"/>
+                                                                    <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="48"/>
+                                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HKR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TRM-xK-4pP">
+                                                                    <rect key="frame" x="133.5" y="0.0" width="103" height="66"/>
+                                                                    <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="48"/>
+                                                                    <color key="textColor" red="0.0042660361840000001" green="0.68678042760000002" blue="0.080026726970000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign up or login to start requestiong rides with hithhkr, plus some other stuff" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="326" translatesAutoresizingMaskIntoConstraints="NO" id="bbD-Ua-JVu">
+                                                            <rect key="frame" x="0.0" y="66" width="326" height="46.5"/>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="XrK-O0-wK5">
+                                                    <rect key="frame" x="0.0" y="132.5" width="326" height="41"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="SHp-rS-FVC"/>
+                                                    </constraints>
+                                                    <segments>
+                                                        <segment title="Passenger"/>
+                                                        <segment title="Driver"/>
+                                                    </segments>
+                                                    <color key="tintColor" red="0.0042660361840000001" green="0.68678042760000002" blue="0.080026726970000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                </segmentedControl>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zj6-l8-GUr">
+                                                    <rect key="frame" x="0.0" y="192.5" width="326" height="60"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="60" id="wcO-kR-VKH"/>
+                                                    </constraints>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="30"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lve-Dd-FW0">
+                                                    <rect key="frame" x="0.0" y="272.5" width="326" height="60"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="60" id="VhC-lZ-gpF"/>
+                                                    </constraints>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="30"/>
+                                                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                                </textField>
+                                            </subviews>
+                                        </stackView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tlv-Zq-1xO" customClass="RoundedShadowButton" customModule="hitchhiker" customModuleProvider="target">
+                                            <rect key="frame" x="20" y="587" width="335" height="60"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="60" id="DdL-3F-2ha"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="AvenirNext-Heavy" family="Avenir Next" pointSize="28"/>
+                                            <state key="normal" title="SIGN UP /LOGIN">
+                                                <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="tlv-Zq-1xO" secondAttribute="bottom" constant="20" id="8qo-Hu-i7z"/>
+                                        <constraint firstItem="BAn-Gw-0EC" firstAttribute="centerY" secondItem="hQE-oK-6Dh" secondAttribute="centerY" id="Ed2-cT-wQ6"/>
+                                        <constraint firstItem="LzZ-gc-gni" firstAttribute="top" secondItem="hQE-oK-6Dh" secondAttribute="top" constant="30" id="KlF-VH-8gK"/>
+                                        <constraint firstItem="tlv-Zq-1xO" firstAttribute="leading" secondItem="hQE-oK-6Dh" secondAttribute="leading" constant="20" id="R41-mz-XNt"/>
+                                        <constraint firstItem="LzZ-gc-gni" firstAttribute="leading" secondItem="hQE-oK-6Dh" secondAttribute="leading" constant="20" id="dZx-o7-kw3"/>
+                                        <constraint firstAttribute="trailing" secondItem="tlv-Zq-1xO" secondAttribute="trailing" constant="20" id="sjv-IW-CXD"/>
+                                        <constraint firstItem="BAn-Gw-0EC" firstAttribute="centerX" secondItem="hQE-oK-6Dh" secondAttribute="centerX" id="xei-DW-BYc"/>
+                                    </constraints>
+                                </view>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xKq-sz-zK0" firstAttribute="trailing" secondItem="JNA-B4-HJU" secondAttribute="trailing" id="EPk-XC-XJv"/>
+                            <constraint firstItem="Q8T-Vl-Tqm" firstAttribute="leading" secondItem="JNA-B4-HJU" secondAttribute="leading" id="LJW-bA-pa8"/>
+                            <constraint firstItem="Q8T-Vl-Tqm" firstAttribute="bottom" secondItem="JNA-B4-HJU" secondAttribute="bottom" id="MoF-wF-3hX"/>
+                            <constraint firstItem="xKq-sz-zK0" firstAttribute="top" secondItem="9iO-Im-biI" secondAttribute="top" id="PDD-AX-T8F"/>
+                            <constraint firstItem="Q8T-Vl-Tqm" firstAttribute="top" secondItem="9iO-Im-biI" secondAttribute="top" id="ZFa-NQ-AhE"/>
+                            <constraint firstItem="Q8T-Vl-Tqm" firstAttribute="trailing" secondItem="JNA-B4-HJU" secondAttribute="trailing" id="c7w-AS-phr"/>
+                            <constraint firstItem="xKq-sz-zK0" firstAttribute="leading" secondItem="JNA-B4-HJU" secondAttribute="leading" id="cYF-54-4L0"/>
+                            <constraint firstItem="xKq-sz-zK0" firstAttribute="bottom" secondItem="JNA-B4-HJU" secondAttribute="bottom" id="moP-dc-n5L"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="JNA-B4-HJU"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PdG-Dj-Qwd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1501.5999999999999" y="134.48275862068968"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="cancelBtn" width="32" height="31"/>
         <image name="centerMapBtn" width="62" height="62"/>
         <image name="menuSliderBtn" width="30" height="24"/>
+        <image name="pexels-photo-24821" width="2992" height="2000"/>
         <image name="sample-photo" width="320" height="320"/>
     </resources>
 </document>
