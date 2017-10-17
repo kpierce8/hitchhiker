@@ -8,6 +8,8 @@
 
 import UIKit
 import MapKit
+import RevealingSplashView
+
 
 class HomeVC: UIViewController, MKMapViewDelegate {
 
@@ -23,9 +25,17 @@ class HomeVC: UIViewController, MKMapViewDelegate {
     
     var delegate: CenterVCDelegate?
     
+    let revealingSplashView = RevealingSplashView(iconImage: UIImage(named: "launchScreenIcon")!, iconInitialSize: CGSize(width: 80, height: 80), backgroundColor: UIColor.white )
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         mapview.delegate = self
+        
+        self.view.addSubview(revealingSplashView)
+        revealingSplashView.animationType = SplashAnimationType.heartBeat
+        revealingSplashView.startAnimation()
+        
+        revealingSplashView.heartAttack = true
         
         // Stuff I added to change starting position
         let noLocation: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 47.016, longitude: -122.7853)
@@ -35,9 +45,6 @@ class HomeVC: UIViewController, MKMapViewDelegate {
         self.mapview.showsUserLocation = true
         // Do any additional setup after loading the view, typically from a nib.
     }
-
-    
-
 
 }
 
