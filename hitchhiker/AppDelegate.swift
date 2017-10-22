@@ -16,7 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 fileprivate var containerVC = ContainerVC()
     
-    
+    var MenuContainerVC: ContainerVC {
+        return containerVC
+    }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
@@ -51,5 +53,8 @@ fileprivate var containerVC = ContainerVC()
     }
 
 
+    class func getAppDelegate() -> AppDelegate {
+        return UIApplication.shared.delegate as! AppDelegate
+    }
 }
 
