@@ -41,5 +41,11 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Hitchhiker needs your location to find you</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Checking location neeeds</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>yo please let me follow you</string>
 </dict>
 </plist>
