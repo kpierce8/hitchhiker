@@ -21,6 +21,8 @@
 		E1ACE78D1F85E0350053A1FC /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ACE78C1F85E0350053A1FC /* CircleView.swift */; };
 		E1ACE78F1F85E1D50053A1FC /* RoundedShadowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ACE78E1F85E1D50053A1FC /* RoundedShadowButton.swift */; };
 		E1C0E4921F9BDBEF0006DB59 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E1A65C511F95ABA700D5F2EC /* GoogleService-Info.plist */; };
+		E1C0E4941F9D1EE80006DB59 /* updateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C0E4931F9D1EE80006DB59 /* updateService.swift */; };
+		E1C0E4961F9D556B0006DB59 /* DriverAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C0E4951F9D556B0006DB59 /* DriverAnnotation.swift */; };
 		E1EE76FA1F831C46002BB811 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EE76F91F831C46002BB811 /* AppDelegate.swift */; };
 		E1EE76FC1F831C46002BB811 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EE76FB1F831C46002BB811 /* HomeVC.swift */; };
 		E1EE76FF1F831C46002BB811 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1EE76FD1F831C46002BB811 /* Main.storyboard */; };
@@ -45,6 +47,8 @@
 		E1ACE78A1F85DA980053A1FC /* RoundedShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedShadowView.swift; sourceTree = "<group>"; };
 		E1ACE78C1F85E0350053A1FC /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		E1ACE78E1F85E1D50053A1FC /* RoundedShadowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedShadowButton.swift; sourceTree = "<group>"; };
+		E1C0E4931F9D1EE80006DB59 /* updateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = updateService.swift; sourceTree = "<group>"; };
+		E1C0E4951F9D556B0006DB59 /* DriverAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverAnnotation.swift; sourceTree = "<group>"; };
 		E1EE76F61F831C46002BB811 /* hitchhiker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hitchhiker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1EE76F91F831C46002BB811 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1EE76FB1F831C46002BB811 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
@@ -103,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				E1A65C531F95B0AE00D5F2EC /* DataService.swift */,
+				E1C0E4931F9D1EE80006DB59 /* updateService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -123,6 +128,7 @@
 				E1ACE78C1F85E0350053A1FC /* CircleView.swift */,
 				E1ACE78E1F85E1D50053A1FC /* RoundedShadowButton.swift */,
 				E1222F8D1F941D21008A8FA8 /* RoundedCornerTextField.swift */,
+				E1C0E4951F9D556B0006DB59 /* DriverAnnotation.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -318,8 +324,10 @@
 				E1ACE78F1F85E1D50053A1FC /* RoundedShadowButton.swift in Sources */,
 				E1222F8C1F93F834008A8FA8 /* LoginVC.swift in Sources */,
 				E1ACE78D1F85E0350053A1FC /* CircleView.swift in Sources */,
+				E1C0E4941F9D1EE80006DB59 /* updateService.swift in Sources */,
 				E1EE76FC1F831C46002BB811 /* HomeVC.swift in Sources */,
 				E1222F841F928F6A008A8FA8 /* ContainerVC.swift in Sources */,
+				E1C0E4961F9D556B0006DB59 /* DriverAnnotation.swift in Sources */,
 				E1222F8A1F93EBE6008A8FA8 /* UIViewExt.swift in Sources */,
 				E1ACE7891F85D8A00053A1FC /* RoundImageView.swift in Sources */,
 				E1222F821F928ECE008A8FA8 /* LeftSidePanelVC.swift in Sources */,

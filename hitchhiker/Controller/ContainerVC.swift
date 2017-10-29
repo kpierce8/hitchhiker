@@ -17,7 +17,6 @@ enum SlideOutState {
 
 enum ShowWhichVC {
     case homeVC
-
 }
 
 var showVC: ShowWhichVC = .homeVC
@@ -104,17 +103,13 @@ extension ContainerVC: CenterVCDelegate {
         if shouldExpand {
             isHidden = !isHidden
             animateStatusBar()
-            
             setupWhiteCoverView()
             currentState = .leftPanelExtended
-            
             animateCenterPanelXPosition(targetPosition: centerController.view.frame.width - centerPanelExpandedOffset)
         } else {
             isHidden = !isHidden
             animateStatusBar()
-            
             hideWhiteCoverView()
-            
             animateCenterPanelXPosition(targetPosition: 0, completion: { (finished) in
                 if finished == true {
                     self.currentState = .collapsed
@@ -169,10 +164,10 @@ extension ContainerVC: CenterVCDelegate {
     }
     
     func animateStatusBar() {
-        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseInOut
-            , animations: {
-                self.setNeedsStatusBarAppearanceUpdate()
-        })
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseInOut,
+               animations: {
+                 self.setNeedsStatusBarAppearanceUpdate()
+            })
     }
     
     
