@@ -18,6 +18,8 @@ class HomeVC: UIViewController  {
     var delegate: CenterVCDelegate?
     var manager: CLLocationManager?
     var regionRadius: CLLocationDistance = 1000
+    var currentUserId = Auth.auth().currentUser?.uid
+    
     
     @IBOutlet weak var destinationTextField: UITextField!
     
@@ -162,15 +164,19 @@ extension HomeVC: MKMapViewDelegate {
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        if let annotation2 = annotation as? DriverAnnotation {
+        if let annotation = annotation as? DriverAnnotation {
             let identifier = "driver"
             var view: MKAnnotationView
-            view = MKAnnotationView(annotation: annotation2, reuseIdentifier: identifier)
+            view = MKAnnotationView(annotation: annotation, reuseIdentifier: identifier)
             view.image = UIImage(named: "driverAnnotation")
-            print("returning view")
+            return view
+        } else if let annotation = annotation as? PassengerAnnotation {
+            let identifier = "passenger"
+            var view: MKAnnotationView
+            view = MKAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            view.image = UIImage(named: "currentLocationAnnotation")
             return view
         }
-    print("gonna return nil")
     return nil
     }
     
@@ -296,7 +302,26 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let passengerCoordinate = manager?.location?.coordinate
+        let passengerAnnotation = PassengerAnnotation(coordinate: passengerCoordinate!, key: currentUserId!)
+        mapview.addAnnotation(passengerAnnotation)
+        destinationTextField.text = tableView.cellForRow(at: indexPath)?.textLabel?.text
+        
+        let selectedMapItem = matchingItems[indexPath.row]
+        
+        DataService.instance.REF_USERS.child(currentUserId!).updateChildValues(["tripCoordinate": [selectedMapItem.placemark.coordinate.latitude, selectedMapItem.placemark.coordinate.longitude]])
+        
         animateTableView(shouldShow: false)
         print("selected")
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        view.endEditing(true)
+    }
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        if destinationTextField.text == "" {
+            animateTableView(shouldShow: false)
+        }
     }
 }
