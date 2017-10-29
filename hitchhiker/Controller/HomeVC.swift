@@ -18,7 +18,7 @@ class HomeVC: UIViewController  {
     var delegate: CenterVCDelegate?
     var manager: CLLocationManager?
     var regionRadius: CLLocationDistance = 1000
-    var currentUserId = Auth.auth().currentUser?.uid
+    var currentUserId: String?
     
     
     @IBOutlet weak var destinationTextField: UITextField!
@@ -43,6 +43,7 @@ class HomeVC: UIViewController  {
         mapview.delegate = self
         destinationTextField.delegate = self
         centerMapOnUserLocation()
+        currentUserId = Auth.auth().currentUser?.uid
         
         DataService.instance.REF_DRIVERS.observe(.value, with: { (snapshot) in
             self.loadDriverAnnotationsFromFB()
@@ -64,6 +65,8 @@ class HomeVC: UIViewController  {
         //        self.mapview.showsUserLocation = true
         // Do any additional setup after loading the view, typically from a nib.
     }
+    
+    
     @IBAction func menuButtonWasPressed(_ sender: Any) {
         delegate?.toggelLeftPanel()
     }
