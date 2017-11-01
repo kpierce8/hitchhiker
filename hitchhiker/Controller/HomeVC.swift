@@ -19,7 +19,7 @@ class HomeVC: UIViewController  {
     var manager: CLLocationManager?
     var regionRadius: CLLocationDistance = 1000
     var currentUserId: String?
-    
+    var route: MKRoute!
     
     @IBOutlet weak var destinationTextField: UITextField!
     
@@ -30,6 +30,8 @@ class HomeVC: UIViewController  {
     var tableView = UITableView()
     
     var matchingItems: [MKMapItem] = [MKMapItem]()
+    var selectedItemPlacemark: MKPlacemark? = nil
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -166,6 +168,15 @@ extension HomeVC: MKMapViewDelegate {
         UpdateService.instance.updateDriverLocation(withCoordinate: userLocation.coordinate)
     }
     
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        let lineRenderer = MKPolylineRenderer(overlay: self.route.polyline)
+        lineRenderer.strokeColor = UIColor(red: 0.5, green: 0.9, blue: 0.75, alpha: 0.75)
+        lineRenderer.lineWidth = 4
+        lineRenderer.lineCap = .round
+        
+        return lineRenderer
+    }
+    
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         if let annotation = annotation as? DriverAnnotation {
             let identifier = "driver"
@@ -179,8 +190,50 @@ extension HomeVC: MKMapViewDelegate {
             view = MKAnnotationView(annotation: annotation, reuseIdentifier: identifier)
             view.image = UIImage(named: "currentLocationAnnotation")
             return view
+        } else if let annotation = annotation as? MKPointAnnotation {
+            let identifier = "destination"
+            var annotationView = mapview.dequeueReusableAnnotationView(withIdentifier: "destination")
+            if annotationView == nil {
+                annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            } else {
+                annotationView?.annotation = annotation
+            }
+            annotationView?.image = UIImage.init(named: "destinationAnnotation")
+            return annotationView
         }
     return nil
+    }
+    
+    func dropPinFor(placemark: MKPlacemark) {
+        selectedItemPlacemark = placemark
+        
+        for annotation in mapview.annotations {
+            if annotation.isKind(of: MKPointAnnotation.self) {
+                mapview.removeAnnotation(annotation)
+            }
+        }
+        
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = placemark.coordinate
+        mapview.addAnnotation(annotation)
+    }
+    
+    func searchMapKitForResultswithPolyline(forMapItem mapItem: MKMapItem) {
+        let request = MKDirectionsRequest()
+        request.source = MKMapItem.forCurrentLocation()
+        request.destination = mapItem
+        request.transportType = MKDirectionsTransportType.automobile
+        
+        let directions = MKDirections(request: request)
+        directions.calculate { (response, error) in
+            guard let response = response else {
+                print(error.debugDescription)
+                return
+            }
+            self.route = response.routes[0]
+            
+            self.mapview.add(self.route.polyline)
+        }
     }
     
     func mapView(_ mapView: MKMapView, regionWillChangeAnimated animated: Bool) {
@@ -313,7 +366,8 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
         let selectedMapItem = matchingItems[indexPath.row]
         
         DataService.instance.REF_USERS.child(currentUserId!).updateChildValues(["tripCoordinate": [selectedMapItem.placemark.coordinate.latitude, selectedMapItem.placemark.coordinate.longitude]])
-        
+        dropPinFor(placemark: selectedMapItem.placemark)
+        searchMapKitForResultswithPolyline(forMapItem: selectedMapItem)
         animateTableView(shouldShow: false)
         print("selected")
     }
