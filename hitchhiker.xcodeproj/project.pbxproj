@@ -14,6 +14,8 @@
 		E1222F8A1F93EBE6008A8FA8 /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1222F891F93EBE6008A8FA8 /* UIViewExt.swift */; };
 		E1222F8C1F93F834008A8FA8 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1222F8B1F93F834008A8FA8 /* LoginVC.swift */; };
 		E1222F8E1F941D21008A8FA8 /* RoundedCornerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1222F8D1F941D21008A8FA8 /* RoundedCornerTextField.swift */; };
+		E17D4EF91FAAABDF00663433 /* UIViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17D4EF81FAAABDF00663433 /* UIViewControllerExt.swift */; };
+		E198EBF71FAABF2C001C4A41 /* Alertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E198EBF61FAABF2C001C4A41 /* Alertable.swift */; };
 		E1A65C541F95B0AE00D5F2EC /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A65C531F95B0AE00D5F2EC /* DataService.swift */; };
 		E1ACE7871F85D2D20053A1FC /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ACE7861F85D2D20053A1FC /* GradientView.swift */; };
 		E1ACE7891F85D8A00053A1FC /* RoundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ACE7881F85D8A00053A1FC /* RoundImageView.swift */; };
@@ -41,6 +43,8 @@
 		E1222F891F93EBE6008A8FA8 /* UIViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
 		E1222F8B1F93F834008A8FA8 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		E1222F8D1F941D21008A8FA8 /* RoundedCornerTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornerTextField.swift; sourceTree = "<group>"; };
+		E17D4EF81FAAABDF00663433 /* UIViewControllerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExt.swift; sourceTree = "<group>"; };
+		E198EBF61FAABF2C001C4A41 /* Alertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alertable.swift; sourceTree = "<group>"; };
 		E1A65C511F95ABA700D5F2EC /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E1A65C531F95B0AE00D5F2EC /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		E1ACE7861F85D2D20053A1FC /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
@@ -93,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				E1222F861F929936008A8FA8 /* CenterVCDelegate.swift */,
+				E198EBF61FAABF2C001C4A41 /* Alertable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -101,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				E1222F891F93EBE6008A8FA8 /* UIViewExt.swift */,
+				E17D4EF81FAAABDF00663433 /* UIViewControllerExt.swift */,
 			);
 			path = " Extensions";
 			sourceTree = "<group>";
@@ -324,6 +330,7 @@
 			files = (
 				E1222F871F929936008A8FA8 /* CenterVCDelegate.swift in Sources */,
 				E1A65C541F95B0AE00D5F2EC /* DataService.swift in Sources */,
+				E17D4EF91FAAABDF00663433 /* UIViewControllerExt.swift in Sources */,
 				E1ACE78F1F85E1D50053A1FC /* RoundedShadowButton.swift in Sources */,
 				E1222F8C1F93F834008A8FA8 /* LoginVC.swift in Sources */,
 				E1ACE78D1F85E0350053A1FC /* CircleView.swift in Sources */,
@@ -332,6 +339,7 @@
 				E1C0E4981FA6770E0006DB59 /* PassengerAnnotation.swift in Sources */,
 				E1222F841F928F6A008A8FA8 /* ContainerVC.swift in Sources */,
 				E1C0E4961F9D556B0006DB59 /* DriverAnnotation.swift in Sources */,
+				E198EBF71FAABF2C001C4A41 /* Alertable.swift in Sources */,
 				E1222F8A1F93EBE6008A8FA8 /* UIViewExt.swift in Sources */,
 				E1ACE7891F85D8A00053A1FC /* RoundImageView.swift in Sources */,
 				E1222F821F928ECE008A8FA8 /* LeftSidePanelVC.swift in Sources */,

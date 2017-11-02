@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class LoginVC: UIViewController, UITextFieldDelegate {
+class LoginVC: UIViewController, UITextFieldDelegate, Alertable {
 
  
     @IBOutlet weak var emailField: RoundedCornerTextField!
@@ -57,11 +57,11 @@ class LoginVC: UIViewController, UITextFieldDelegate {
                         if let errorCode = AuthErrorCode(rawValue: error!._code){
                             switch errorCode {
                             case .invalidEmail:
-                                print("Email invalid")
+                                self.showAlert("Email invalid")
                             case .wrongPassword:
-                                print("whoops, wrong password")
+                                self.showAlert("whoops, wrong password")
                             default:
-                                print("don't know what happened maybe it was \(errorCode.rawValue    )")
+                                self.showAlert("don't know what happened maybe it was \(errorCode.rawValue    )")
                             }
                         }
                         
@@ -71,11 +71,11 @@ class LoginVC: UIViewController, UITextFieldDelegate {
                                 if let errorCode = AuthErrorCode(rawValue: error!._code){
                                     switch errorCode {
                                     case .invalidEmail:
-                                        print("Email invalid")
+                                        self.showAlert("Email invalid")
                                     case .emailAlreadyInUse:
-                                        print("try a different email, email in use")
+                                        self.showAlert("try a different email, email in use")
                                     default:
-                                        print("don't know what happened maybe it was \(errorCode.rawValue    )")
+                                        self.showAlert("don't know what happened maybe it was \(errorCode.rawValue    )")
                                     }
                                 }
                                
