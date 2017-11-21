@@ -14,6 +14,8 @@
 		E1222F8A1F93EBE6008A8FA8 /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1222F891F93EBE6008A8FA8 /* UIViewExt.swift */; };
 		E1222F8C1F93F834008A8FA8 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1222F8B1F93F834008A8FA8 /* LoginVC.swift */; };
 		E1222F8E1F941D21008A8FA8 /* RoundedCornerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1222F8D1F941D21008A8FA8 /* RoundedCornerTextField.swift */; };
+		E17A99A21FC3D5C600592DA2 /* PickupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17A99A11FC3D5C600592DA2 /* PickupVC.swift */; };
+		E17A99A41FC3D91000592DA2 /* RoundMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17A99A31FC3D91000592DA2 /* RoundMapView.swift */; };
 		E17D4EF91FAAABDF00663433 /* UIViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17D4EF81FAAABDF00663433 /* UIViewControllerExt.swift */; };
 		E198EBF71FAABF2C001C4A41 /* Alertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E198EBF61FAABF2C001C4A41 /* Alertable.swift */; };
 		E1A65C541F95B0AE00D5F2EC /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A65C531F95B0AE00D5F2EC /* DataService.swift */; };
@@ -43,6 +45,8 @@
 		E1222F891F93EBE6008A8FA8 /* UIViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
 		E1222F8B1F93F834008A8FA8 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		E1222F8D1F941D21008A8FA8 /* RoundedCornerTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornerTextField.swift; sourceTree = "<group>"; };
+		E17A99A11FC3D5C600592DA2 /* PickupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickupVC.swift; sourceTree = "<group>"; };
+		E17A99A31FC3D91000592DA2 /* RoundMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundMapView.swift; sourceTree = "<group>"; };
 		E17D4EF81FAAABDF00663433 /* UIViewControllerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExt.swift; sourceTree = "<group>"; };
 		E198EBF61FAABF2C001C4A41 /* Alertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alertable.swift; sourceTree = "<group>"; };
 		E1A65C511F95ABA700D5F2EC /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -138,6 +142,7 @@
 				E1222F8D1F941D21008A8FA8 /* RoundedCornerTextField.swift */,
 				E1C0E4951F9D556B0006DB59 /* DriverAnnotation.swift */,
 				E1C0E4971FA6770E0006DB59 /* PassengerAnnotation.swift */,
+				E17A99A31FC3D91000592DA2 /* RoundMapView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -149,6 +154,7 @@
 				E1222F811F928ECE008A8FA8 /* LeftSidePanelVC.swift */,
 				E1222F831F928F6A008A8FA8 /* ContainerVC.swift */,
 				E1222F8B1F93F834008A8FA8 /* LoginVC.swift */,
+				E17A99A11FC3D5C600592DA2 /* PickupVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -342,6 +348,8 @@
 				E198EBF71FAABF2C001C4A41 /* Alertable.swift in Sources */,
 				E1222F8A1F93EBE6008A8FA8 /* UIViewExt.swift in Sources */,
 				E1ACE7891F85D8A00053A1FC /* RoundImageView.swift in Sources */,
+				E17A99A21FC3D5C600592DA2 /* PickupVC.swift in Sources */,
+				E17A99A41FC3D91000592DA2 /* RoundMapView.swift in Sources */,
 				E1222F821F928ECE008A8FA8 /* LeftSidePanelVC.swift in Sources */,
 				E1ACE78B1F85DA980053A1FC /* RoundedShadowView.swift in Sources */,
 				E1222F8E1F941D21008A8FA8 /* RoundedCornerTextField.swift in Sources */,
